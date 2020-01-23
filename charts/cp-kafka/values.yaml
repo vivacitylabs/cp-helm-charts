@@ -97,6 +97,13 @@ podAnnotations: {}
 ## Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
 nodeSelector: {}
 
+readinessProbe:
+  initialDelaySeconds: 60
+  periodSeconds: 10
+  timeoutSeconds: 30
+  successThreshold: 1
+  failureThreshold: 60
+
 ## Taints to tolerate on node assignment:
 ## Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
 tolerations: {}
