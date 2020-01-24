@@ -11,6 +11,7 @@ spec:
   ports:
     - port: 9092
       name: broker
+  publishNotReadyAddresses: true
   clusterIP: None
   selector:
     app: {{ template "cp-kafka.name" . }}

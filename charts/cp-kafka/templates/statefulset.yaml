@@ -82,16 +82,7 @@ spec:
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
         imagePullPolicy: "{{ .Values.imagePullPolicy }}"
         readinessProbe:
-          exec:
-            command:
-              - sh
-              - -ec
-              - if [ $(kafka-topics --bootstrap-server localhost:9092 --under-replicated-partitions --describe | wc -l) -eq 0 ]; then exit 0; else exit 1; fi;
-          initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
-          periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
-          timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
-          successThreshold: {{ .Values.readinessProbe.successThreshold }}
-          failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
+{{ toYaml .Values.readinessProbe | indent 10 }}
         ports:
         - containerPort: 9092
           name: kafka
