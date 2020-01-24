@@ -45,6 +45,10 @@ maxClientCnxns: 60
 autoPurgeSnapRetainCount: 3
 autoPurgePurgeInterval: 24
 
+configurationOverrides: {}
+
+customEnv: {}
+
 ## Zookeeper JVM Heap Option
 heapOptions: "-Xms512M -Xmx512M"
 
