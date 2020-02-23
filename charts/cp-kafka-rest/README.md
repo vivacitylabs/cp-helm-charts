@@ -185,3 +185,17 @@ The configuration parameters in this section control the resources requested and
 | --------- | ----------- | ------- |
 | `cp-schema-registry.url` | Service name of Schema Registry (Not needed if this is installed along with cp-kafka chart). | `""` |
 | `cp-schema-registry.port` | Port of Schema Registry Service | `8081` |
+
+### ServiceAccount
+
+| Parameter | Description | Default |
+| --------- | ----------- | ------- |
+| `serviceAccount.create` | Specifies whether a ServiceAccount should be created. | `false` |
+| `serviceAccount.name` | The name of the ServiceAccount to use, otherwise a default name is used. | `` |
+
+
+### PodSpec
+
+| Parameter | Description | Default |
+| --------- | ----------- | ------- |
+| `podSpec.shareProcessNamespace` | Specifies whether all containers in the pod should share the same process namespace to allow signals to be sent from one container to another (e.g. SIGTERM). | `true` |

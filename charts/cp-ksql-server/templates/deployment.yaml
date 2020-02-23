@@ -33,6 +33,11 @@ spec:
       {{- end }}
       {{- end }}
     spec:
+      shareProcessNamespace: {{ .Values.podSpec.shareProcessNamespace }}
+      {{- if .Values.serviceAccount.create }}
+      serviceAccountName: {{ template "cp-ksql-server.serviceAccountName" . }}
+      automountServiceAccountToken: true
+      {{- end }}
       containers:
         {{- if .Values.prometheus.jmx.enabled }}
         - name: prometheus-jmx-exporter

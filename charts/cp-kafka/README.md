@@ -207,3 +207,17 @@ The configuration parameters in this section control the resources requested and
 | `cp-zookeeper.persistence.dataLogDirSize` | Size for data log dir, which is a dedicated log device to be used, and helps avoid competition between logging and snapshots. This will overwrite corresponding value in cp-zookeeper chart's value.yaml. | `5Gi` |
 | `cp-zookeeper.url` | Service name of Zookeeper cluster (Not needed if zookeeper.enabled is set to true). | `""` |
 | `cp-zookeeper.clientPort` | Port of Zookeeper Cluster | `2181` |
+
+### ServiceAccount
+
+| Parameter | Description | Default |
+| --------- | ----------- | ------- |
+| `serviceAccount.create` | Specifies whether a ServiceAccount should be created. | `false` |
+| `serviceAccount.name` | The name of the ServiceAccount to use, otherwise a default name is used. | `` |
+
+
+### PodSpec
+
+| Parameter | Description | Default |
+| --------- | ----------- | ------- |
+| `podSpec.shareProcessNamespace` | Specifies whether all containers in the pod should share the same process namespace to allow signals to be sent from one container to another (e.g. SIGTERM). | `true` |

@@ -162,3 +162,18 @@ The configuration parameters in this section control the resources requested and
 | Parameter | Description | Default |
 | --------- | ----------- | ------- |
 | `kafka.bootstrapServers` | Bootstrap Servers for Kafka Connect | `""` |
+
+
+### ServiceAccount
+
+| Parameter | Description | Default |
+| --------- | ----------- | ------- |
+| `serviceAccount.create` | Specifies whether a ServiceAccount should be created. | `false` |
+| `serviceAccount.name` | The name of the ServiceAccount to use, otherwise a default name is used. | `` |
+
+
+### PodSpec
+
+| Parameter | Description | Default |
+| --------- | ----------- | ------- |
+| `podSpec.shareProcessNamespace` | Specifies whether all containers in the pod should share the same process namespace to allow signals to be sent from one container to another (e.g. SIGTERM). | `true` |

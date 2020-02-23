@@ -162,3 +162,16 @@ The configuration parameters in this section control the resources requested and
 | --------- | ----------- | ------- |
 | `nodeSelector` | Dictionary containing key-value-pairs to match labels on nodes. When defined pods will only be scheduled on nodes, that have each of the indicated key-value pairs as labels. Further information can be found in the [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/) | `{}`
 | `tolerations`| Array containing taint references. When defined, pods can run on nodes, which would otherwise deny scheduling. Further information can be found in the [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) | `{}`
+
+### ServiceAccount
+
+| Parameter | Description | Default |
+| --------- | ----------- | ------- |
+| `serviceAccount.create` | Specifies whether a ServiceAccount should be created. | `false` |
+| `serviceAccount.name` | The name of the ServiceAccount to use, otherwise a default name is used. | `` |
+
+### PodSpec
+
+| Parameter | Description | Default |
+| --------- | ----------- | ------- |
+| `podSpec.shareProcessNamespace` | Specifies whether all containers in the pod should share the same process namespace to allow signals to be sent from one container to another (e.g. SIGTERM). | `true` |

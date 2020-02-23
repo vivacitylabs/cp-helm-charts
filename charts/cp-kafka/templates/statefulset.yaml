@@ -39,6 +39,11 @@ spec:
       {{- end }}
       {{- end }}
     spec:
+      shareProcessNamespace: {{ .Values.podSpec.shareProcessNamespace }}
+      {{- if .Values.serviceAccount.create }}
+      serviceAccountName: {{ template "cp-kafka.serviceAccountName" . }}
+      automountServiceAccountToken: true
+      {{- end }}
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
