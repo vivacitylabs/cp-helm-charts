@@ -68,7 +68,7 @@ NAME                     DESIRED  CURRENT  AGE
 boiling-heron-zookeeper  3        3        5m
 boiling-heron-cp-kafka   3        3        5m
 
-==> v1beta1/PodDisruptionBudget
+==> v1/PodDisruptionBudget
 NAME                         MIN AVAILABLE  MAX UNAVAILABLE  ALLOWED DISRUPTIONS  AGE
 boiling-heron-zookeeper-pdb  N/A            1                1                    5m
 
